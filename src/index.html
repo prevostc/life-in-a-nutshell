@@ -1,0 +1,163 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Life in a nutshell</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="manifest" href="manifest.json" />
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <style type="text/css">
+            :root {
+                --slider-width: 60px;
+            }
+            /* href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+               integrity="sha256-HxaKz5E/eBbvhGMNwhWRPrAR9i/lG1JeT4mD6hCQ7s4=" */
+            /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}/*# sourceMappingURL=normalize.min.css.map */
+            /* https://www.w3schools.com/howto/howto_css_switch.asp */
+            /* The switch - the box around the slider */
+            .switch {
+                position: relative;
+                display: inline-block;
+                height: 34px;
+            }
+
+            /* Hide default HTML checkbox */
+            .switch input {display:none;}
+
+            /* The slider */
+            .slider {
+                width: var(--slider-width);
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+            }
+
+            input:checked + .slider {
+                background-color: #2196F3;
+            }
+
+            input:focus + .slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+                border-radius: 34px;
+            }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+
+            .label{
+                color: #b4b5b7;
+                width: 100%;
+                font-family: Arial;
+                font-size: 2em;
+                font-weight: bold;
+                cursor: pointer;
+                padding-left: calc(var(--slider-width) + 20px);
+            }
+            input:checked ~ .label {
+                color: #323F6B;
+            }
+
+            .label, .slider, .slider:before{
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+        </style>
+        <style type="text/css">
+            /* layout */
+            .container {
+                width: 260px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            .switch {
+                margin-bottom: 50px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="container">
+            <label class="switch">
+                <input type="checkbox" checked="checked" onchange="toggle(this)">
+                <span class="slider round"></span>
+                <span class="label">Work</span>
+            </label>
+            <label class="switch">
+                <input type="checkbox" onchange="toggle(this)">
+                <span class="slider round"></span>
+                <span class="label">Social Life</span>
+            </label>
+            <label class="switch">
+                <input type="checkbox" onchange="toggle(this)">
+                <span class="slider round"></span>
+                <span class="label">Sleep</span>
+            </label>
+        </div>
+
+        <script type="application/javascript">
+            function toggle(target) {
+                let inputs = Array.from(document.querySelectorAll('input'));
+                let allTrue = inputs.reduce((agg, el) => agg && el.checked, true);
+                if (allTrue) {
+                    inputs = inputs.filter(e => e !== target)
+                    let idx = Math.floor(Math.random() * inputs.length)
+                    inputs[idx].checked = !inputs[idx].checked;
+                }
+            }
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-104756616-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+        <script type="application/javascript">
+            navigator.serviceWorker && navigator.serviceWorker.register('./sw.js').then(function(registration) {
+                console.log('Excellent, registered with scope: ', registration.scope);
+            });
+        </script>
+    </body>
+</html>

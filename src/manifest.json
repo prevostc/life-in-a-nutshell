@@ -1,0 +1,25 @@
+{
+    "name": "Life in a nutshell",
+    "short_name": "Life",
+    "display": "minimal-ui",
+    "start_url": "/",
+    "background_color": "#323F6B",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "tile.png",
+            "sizes": "558x558",
+            "type": "image/png"
+        },
+        {
+            "src": "tile-wide.png",
+            "sizes": "558x270",
+            "type": "image/png"
+        }
+    ]
+}

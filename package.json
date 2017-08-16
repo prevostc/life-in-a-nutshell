@@ -1,0 +1,11 @@
+{
+  "name": "lifeinanutshell",
+  "private": true,
+  "scripts": {
+    "deploy": "s3-deploy './src/*' --cwd './src/' --region eu-central-1 --bucket life-in-a-nutshell --gzip --etag",
+    "start": "cd src && python -m SimpleHTTPServer 8000"
+  },
+  "devDependencies": {
+    "s3-deploy": "^0.7.5"
+  }
+}
