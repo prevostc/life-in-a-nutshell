@@ -12,8 +12,8 @@
             "type": "image/png"
         },
         {
-            "src": "tile.png",
-            "sizes": "558x558",
+            "src": "tile-512.png",
+            "sizes": "512x512",
             "type": "image/png"
         },
         {
